@@ -891,17 +891,19 @@
       consent:          consent,
     };
 
-    const WEBHOOK = 'https://services.leadconnectorhq.com/hooks/Fv3xcauNdlWz6DzKtGSa/webhook-trigger/097aca0f-a620-49cf-98ca-4983f2570d2c';
+    const EDGE_FN = 'https://gdnfsapnccjhwangfdwy.supabase.co/functions/v1/submit-form';
 
     try {
-      await fetch(WEBHOOK, {
+      await fetch(EDGE_FN, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdkbmZzYXBuY2NqaHdhbmdmZHd5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU3NDAzNTIsImV4cCI6MjA5MTMxNjM1Mn0.nV1JRzyqK0aXbEsLKH5KfY8fvvd2qFSN01gy9I0Fhx0',
+        },
         body: JSON.stringify(payload),
-        mode: 'no-cors'  // GHL webhooks don't return CORS headers — fire-and-forget
       });
     } catch (e) {
-      console.error('Webhook error:', e);
+      console.error('Submission error:', e);
     }
 
     // Show success regardless (no-cors means we can't inspect response)
