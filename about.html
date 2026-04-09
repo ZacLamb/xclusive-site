@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | Xclusive Capital Group</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 60px;
+    }
+    .value-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 36px 28px;
+      text-align: center;
+    }
+    .value-icon {
+      font-size: 2.4rem;
+      margin-bottom: 16px;
+    }
+    .value-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    .value-card p { color: var(--text-muted); font-size: 0.88rem; line-height: 1.75; }
+
+    .mission-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 60px;
+    }
+
+    .team-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .team-avatar {
+      width: 100%;
+      aspect-ratio: 1;
+      background: linear-gradient(135deg, var(--navy-mid), var(--navy-light));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3rem;
+      color: var(--blue-accent);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .team-avatar::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, rgba(21,101,192,0.2), transparent 70%);
+    }
+
+    .team-info { padding: 24px; }
+    .team-info h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+    .team-title {
+      font-size: 0.78rem;
+      color: var(--blue-accent);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .team-info p { color: var(--text-muted); font-size: 0.82rem; line-height: 1.6; }
+
+    @media (max-width: 900px) {
+      .values-grid { grid-template-columns: 1fr 1fr; }
+      .mission-split { grid-template-columns: 1fr; gap: 50px; }
+      .team-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .values-grid { grid-template-columns: 1fr; }
+      .team-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">
+    <img src="logo.png" alt="Xclusive Capital Group" onerror="this.style.display:'none'">
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="products.html">Funding</a></li>
+    <li><a href="how-it-works.html">How It Works</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="apply.html" class="nav-cta">Apply Now</a></li>
+  </ul>
+  <div class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-content">
+    <div class="section-label">Our Story</div>
+    <h1 class="section-title">Built to Serve<br><em>Business Builders</em></h1>
+    <p class="section-subtitle">We started Xclusive Capital Group because we were tired of watching great businesses fail due to lack of capital — not lack of potential.</p>
+  </div>
+</div>
+
+<!-- MISSION -->
+<section style="background: var(--navy);">
+  <div class="mission-split">
+    <div>
+      <div class="section-label">Our Mission</div>
+      <h2 class="section-title">Capital For Every<br><em>Bold Ambition</em></h2>
+      <div class="divider"></div>
+      <p style="color:var(--text-muted);font-size:0.98rem;line-height:1.9;margin-bottom:20px;">
+        At Xclusive Capital Group, we believe that access to capital shouldn't be a privilege reserved for large corporations with established banking relationships. Every hard-working business owner deserves a fair shot at growth.
+      </p>
+      <p style="color:var(--text-muted);font-size:0.98rem;line-height:1.9;margin-bottom:20px;">
+        We built our firm on a simple philosophy: treat every client like our most important client, fight for the best possible terms, and be radically transparent throughout the entire process.
+      </p>
+      <p style="color:var(--text-muted);font-size:0.98rem;line-height:1.9;">
+        Today, we've helped thousands of businesses access the capital they need — from small restaurants getting through a slow season, to construction companies landing their biggest contracts, to medical practices upgrading their equipment.
+      </p>
+    </div>
+    <div>
+      <div class="stats-bar" style="border-radius:20px;border:1px solid var(--border);">
+        <div class="stats-grid" style="grid-template-columns:1fr 1fr;gap:30px;">
+          <div class="stat-item">
+            <div class="stat-number">$<span>500</span>M+</div>
+            <div class="stat-label">Capital Deployed</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number"><span>10K</span>+</div>
+            <div class="stat-label">Businesses Funded</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number"><span>50</span>+</div>
+            <div class="stat-label">Lender Partners</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number"><span>98</span>%</div>
+            <div class="stat-label">Client Satisfaction</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section style="background: var(--navy-mid);">
+  <div style="max-width:1200px;margin:0 auto;text-align:center;">
+    <div class="section-label" style="justify-content:center;">What We Stand For</div>
+    <h2 class="section-title">Our Core <em>Values</em></h2>
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-icon">🤝</div>
+        <h3>Integrity First</h3>
+        <p>We never recommend a product that isn't right for your situation. Our reputation is built on honest advice, even when that advice means sending you somewhere else.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">⚡</div>
+        <h3>Speed Matters</h3>
+        <p>Business opportunities don't wait. We've built our process to move at the speed your business needs — often from application to funded in under 24 hours.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🔍</div>
+        <h3>Radical Transparency</h3>
+        <p>No hidden fees, no jargon, no surprises at signing. We explain every detail of every offer in plain English so you can make a fully informed decision.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🎯</div>
+        <h3>Results Focused</h3>
+        <p>We measure our success by yours. Every decision we make — from the lenders we partner with to how we structure your funding — is driven by your business outcome.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🌐</div>
+        <h3>Access for All</h3>
+        <p>We believe great businesses deserve great capital regardless of credit history or business size. We work with every profile and fight for every client.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🔒</div>
+        <h3>Your Data, Protected</h3>
+        <p>We treat your financial information with the highest security standards. Your data is never sold or shared without your explicit permission.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section style="background: var(--navy);">
+  <div style="max-width:1100px;margin:0 auto;text-align:center;">
+    <div class="section-label" style="justify-content:center;">The Team</div>
+    <h2 class="section-title">The Advisors<br>Behind Your <em>Capital</em></h2>
+    <p class="section-subtitle" style="margin:0 auto;">Every client is assigned a dedicated capital advisor — a real expert who becomes your advocate throughout the entire funding process.</p>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-avatar">JM</div>
+        <div class="team-info">
+          <h4>James Monroe</h4>
+          <div class="team-title">Senior Capital Advisor</div>
+          <p>15 years in commercial lending. Specializes in MCA, SBA 7(a), and commercial real estate for high-growth businesses.</p>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">AS</div>
+        <div class="team-info">
+          <h4>Andrea Santos</h4>
+          <div class="team-title">Equipment Finance Specialist</div>
+          <p>Former bank underwriter. Expert in transportation, construction, and healthcare equipment financing solutions.</p>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">DK</div>
+        <div class="team-info">
+          <h4>David Kim</h4>
+          <div class="team-title">Director of Lender Relations</div>
+          <p>Manages our 50+ lender network. Ensures clients get competitive offers and the most favorable terms available.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-banner">
+  <div class="cta-banner-content">
+    <h2>Let's Work Together</h2>
+    <p>Apply in minutes and get connected with a capital advisor who will fight for your best possible funding outcome.</p>
+    <a href="apply.html" class="btn-primary" style="display:inline-flex;background:#fff;color:var(--blue-primary);">Apply Now — Free</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <p style="margin-top:12px;">Empowering businesses with the capital they need to grow.</p>
+    </div>
+    <div class="footer-col"><h4>Funding</h4><ul>
+      <li><a href="products.html#mca">Merchant Cash Advance</a></li>
+      <li><a href="products.html#sba">SBA Loans</a></li>
+      <li><a href="products.html#equipment">Equipment Financing</a></li>
+      <li><a href="products.html#loc">Line of Credit</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Company</h4><ul>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="how-it-works.html">How It Works</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="apply.html">Apply Now</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul>
+      <li><a href="tel:+18005551234">(800) 555-1234</a></li>
+      <li><a href="/cdn-cgi/l/email-protection#f0999e969fb088939c85839986959391809984919c97829f8580de939f9d"><span class="__cf_email__" data-cfemail="b2dbdcd4ddf2cad1dec7c1dbc4d7d1d3c2dbc6d3ded5c0ddc7c29cd1dddf">[email&#160;protected]</span></a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Xclusive Capital Group. All Rights Reserved.</p>
+    <p><a href="#">Privacy Policy</a> · <a href="#">Terms</a></p>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js

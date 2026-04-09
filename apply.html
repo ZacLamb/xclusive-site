@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apply for Funding | Xclusive Capital Group</title>
+  <meta name="description" content="Apply for business funding in minutes. Merchant Cash Advance, SBA loans, equipment financing and more. No obligation, no hard credit pull." />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .apply-hero {
+      background: var(--gradient-hero);
+      padding: 220px 5% 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .apply-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 50% 50%, rgba(21,101,192,0.15), transparent);
+    }
+    .apply-hero-content { position: relative; z-index: 1; }
+    .apply-hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+    .apply-hero h1 em { font-style: italic; color: var(--blue-accent); }
+    .apply-hero p {
+      color: var(--silver);
+      font-size: 1.05rem;
+      max-width: 500px;
+      margin: 0 auto 32px;
+    }
+
+    /* STEP PROGRESS */
+    .step-progress {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      margin: 0 auto 50px;
+      max-width: 500px;
+    }
+
+    .progress-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      flex: 1;
+      position: relative;
+    }
+
+    .progress-step::after {
+      content: '';
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      right: -50%;
+      height: 2px;
+      background: var(--border);
+      z-index: 0;
+    }
+
+    .progress-step:last-child::after { display: none; }
+
+    .progress-step.active::after,
+    .progress-step.done::after {
+      background: var(--blue-primary);
+    }
+
+    .step-dot {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: var(--navy-mid);
+      border: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      position: relative;
+      z-index: 1;
+      transition: all 0.3s;
+    }
+
+    .progress-step.active .step-dot {
+      border-color: var(--blue-bright);
+      background: var(--blue-primary);
+      color: #fff;
+      box-shadow: 0 0 20px rgba(33,150,243,0.4);
+    }
+
+    .progress-step.done .step-dot {
+      border-color: var(--blue-bright);
+      background: var(--blue-primary);
+      color: #fff;
+    }
+
+    .step-dot-label {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      text-align: center;
+      white-space: nowrap;
+      letter-spacing: 0.05em;
+    }
+
+    .progress-step.active .step-dot-label { color: var(--blue-accent); }
+
+    /* FORM LAYOUT */
+    .apply-layout {
+      padding: 80px 5% 100px;
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 60px;
+      max-width: 1200px;
+      margin: 0 auto;
+      align-items: start;
+    }
+
+    .form-panel {
+      background: rgba(11,22,38,0.7);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 48px;
+      position: relative;
+    }
+
+    .form-panel::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      border-radius: 20px 20px 0 0;
+      background: linear-gradient(90deg, transparent, var(--blue-bright), transparent);
+    }
+
+    .form-step { display: none; }
+    .form-step.active { display: block; }
+
+    .form-step-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+
+    .form-step-sub {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 36px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .btn-next, .btn-back, .btn-submit {
+      padding: 15px 32px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      border: none;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .btn-next, .btn-submit {
+      background: var(--gradient-blue);
+      color: #fff;
+      box-shadow: 0 6px 24px rgba(21,101,192,0.4);
+    }
+
+    .btn-next:hover, .btn-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 36px rgba(21,101,192,0.6);
+    }
+
+    .btn-back {
+      background: transparent;
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+    }
+
+    .btn-back:hover { color: var(--white); border-color: var(--silver); }
+
+    .form-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 36px;
+      gap: 16px;
+    }
+
+    .form-actions-right { display: flex; gap: 12px; }
+
+    /* SIDEBAR */
+    .apply-sidebar { position: sticky; top: 100px; }
+
+    .sidebar-card {
+      background: rgba(11,22,38,0.8);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      margin-bottom: 20px;
+    }
+
+    .sidebar-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+
+    .sidebar-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 14px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .sidebar-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+    .sidebar-icon {
+      width: 34px; height: 34px;
+      border-radius: 8px;
+      background: rgba(21,101,192,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 1rem;
+    }
+
+    .sidebar-item-text strong {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 2px;
+    }
+
+    .sidebar-item-text span {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .qualify-list {
+      list-style: none;
+    }
+
+    .qualify-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .qualify-list li:last-child { border-bottom: none; }
+
+    .qualify-list li::before {
+      content: '✓';
+      color: var(--blue-accent);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* SUCCESS */
+    .success-screen {
+      display: none;
+      text-align: center;
+      padding: 40px 0;
+    }
+
+    .success-icon {
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      background: rgba(21,101,192,0.15);
+      border: 2px solid var(--blue-bright);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      font-size: 2rem;
+    }
+
+    .success-screen h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+
+    .success-screen p {
+      color: var(--text-muted);
+      max-width: 400px;
+      margin: 0 auto 30px;
+      line-height: 1.7;
+    }
+
+    /* Checkbox group */
+    .checkbox-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .checkbox-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .checkbox-item:hover { border-color: rgba(100,181,246,0.3); }
+
+    .checkbox-item input[type="checkbox"] { 
+      width: 18px; height: 18px;
+      accent-color: var(--blue-bright);
+    }
+
+    .checkbox-item label {
+      color: var(--silver-light);
+      font-size: 0.9rem;
+      cursor: pointer;
+      text-transform: none;
+      letter-spacing: 0;
+      font-weight: 400;
+    }
+
+    @media (max-width: 900px) {
+      .apply-layout { grid-template-columns: 1fr; }
+      .apply-sidebar { position: static; }
+      .form-row { grid-template-columns: 1fr; }
+      .form-panel { padding: 32px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">
+    <img src="logo.png" alt="Xclusive Capital Group" onerror="this.style.display='none'">
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="products.html">Funding</a></li>
+    <li><a href="how-it-works.html">How It Works</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="apply.html" class="nav-cta active">Apply Now</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- APPLY HERO -->
+<div class="apply-hero">
+  <div class="apply-hero-content">
+    <div class="section-label" style="justify-content:center;margin-bottom:16px;">Free Application</div>
+    <h1>Get Your Business<br><em>Funded Today</em></h1>
+    <p>Complete our 3-step application in under 5 minutes. No obligation. No hard credit pull. A dedicated advisor will contact you within hours.</p>
+
+    <!-- STEP PROGRESS -->
+    <div class="step-progress" id="stepProgress">
+      <div class="progress-step active" id="prog-1">
+        <div class="step-dot">1</div>
+        <div class="step-dot-label">Business Info</div>
+      </div>
+      <div class="progress-step" id="prog-2">
+        <div class="step-dot">2</div>
+        <div class="step-dot-label">Funding Needs</div>
+      </div>
+      <div class="progress-step" id="prog-3">
+        <div class="step-dot">3</div>
+        <div class="step-dot-label">Owner Details</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- APPLY FORM -->
+<div class="apply-layout">
+  <div>
+    <div class="form-panel">
+
+      <!-- STEP 1: Business Info -->
+      <div class="form-step active" id="step-1">
+        <h2 class="form-step-title">Tell Us About Your Business</h2>
+        <p class="form-step-sub">Basic information to match you with the right funding options.</p>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Legal Business Name *</label>
+            <input type="text" id="bizName" placeholder="Your Business Name" />
+          </div>
+          <div class="form-group">
+            <label>DBA / Trade Name</label>
+            <input type="text" placeholder="If different from legal name" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Business Type *</label>
+            <select id="bizType">
+              <option value="">Select entity type</option>
+              <option>Sole Proprietorship</option>
+              <option>LLC</option>
+              <option>S-Corp</option>
+              <option>C-Corp</option>
+              <option>Partnership</option>
+              <option>Non-Profit</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Industry *</label>
+            <select id="bizIndustry">
+              <option value="">Select your industry</option>
+              <option>Restaurant / Food Service</option>
+              <option>Retail</option>
+              <option>Construction / Contracting</option>
+              <option>Healthcare / Medical</option>
+              <option>Transportation / Trucking</option>
+              <option>Auto Sales / Repair</option>
+              <option>Real Estate</option>
+              <option>Professional Services</option>
+              <option>Manufacturing</option>
+              <option>Technology</option>
+              <option>Beauty / Salon / Spa</option>
+              <option>Fitness / Gym</option>
+              <option>E-Commerce</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Business Phone *</label>
+            <input type="tel" id="bizPhone" placeholder="(555) 000-0000" />
+          </div>
+          <div class="form-group">
+            <label>Business Email *</label>
+            <input type="email" id="bizEmail" placeholder="you@yourbusiness.com" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>State *</label>
+            <select id="bizState">
+              <option value="">Select state</option>
+              <option>AL</option><option>AK</option><option>AZ</option><option>AR</option>
+              <option>CA</option><option>CO</option><option>CT</option><option>DE</option>
+              <option>FL</option><option>GA</option><option>HI</option><option>ID</option>
+              <option>IL</option><option>IN</option><option>IA</option><option>KS</option>
+              <option>KY</option><option>LA</option><option>ME</option><option>MD</option>
+              <option>MA</option><option>MI</option><option>MN</option><option>MS</option>
+              <option>MO</option><option>MT</option><option>NE</option><option>NV</option>
+              <option>NH</option><option>NJ</option><option>NM</option><option>NY</option>
+              <option>NC</option><option>ND</option><option>OH</option><option>OK</option>
+              <option>OR</option><option>PA</option><option>RI</option><option>SC</option>
+              <option>SD</option><option>TN</option><option>TX</option><option>UT</option>
+              <option>VT</option><option>VA</option><option>WA</option><option>WV</option>
+              <option>WI</option><option>WY</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Years in Business *</label>
+            <select id="bizYears">
+              <option value="">Select</option>
+              <option>Less than 6 months</option>
+              <option>6–12 months</option>
+              <option>1–2 years</option>
+              <option>2–5 years</option>
+              <option>5+ years</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Average Monthly Revenue *</label>
+          <select id="monthlyRevenue">
+            <option value="">Select revenue range</option>
+            <option>Under $10,000</option>
+            <option>$10,000 – $25,000</option>
+            <option>$25,000 – $50,000</option>
+            <option>$50,000 – $100,000</option>
+            <option>$100,000 – $250,000</option>
+            <option>$250,000 – $500,000</option>
+            <option>$500,000+</option>
+          </select>
+        </div>
+
+        <div class="form-actions">
+          <div></div>
+          <button class="btn-next" onclick="nextStep(1)">
+            Continue to Funding Needs →
+          </button>
+        </div>
+      </div>
+
+      <!-- STEP 2: Funding Needs -->
+      <div class="form-step" id="step-2">
+        <h2 class="form-step-title">What Do You Need Funded?</h2>
+        <p class="form-step-sub">Help us match you with the right product and lender.</p>
+
+        <div class="form-group">
+          <label>Funding Amount Requested *</label>
+          <select id="fundAmount">
+            <option value="">Select amount range</option>
+            <option>$5,000 – $25,000</option>
+            <option>$25,000 – $50,000</option>
+            <option>$50,000 – $100,000</option>
+            <option>$100,000 – $250,000</option>
+            <option>$250,000 – $500,000</option>
+            <option>$500,000 – $1,000,000</option>
+            <option>$1,000,000 – $2,500,000</option>
+            <option>$2,500,000 – $5,000,000</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Funding Type Interest *</label>
+          <div class="checkbox-group">
+            <div class="checkbox-item">
+              <input type="checkbox" id="mca" name="fundType" value="mca">
+              <label for="mca">Merchant Cash Advance — Fast funding, revenue-based repayment</label>
+            </div>
+            <div class="checkbox-item">
+              <input type="checkbox" id="sba" name="fundType" value="sba">
+              <label for="sba">SBA Loan — Low rates, long terms, government-backed</label>
+            </div>
+            <div class="checkbox-item">
+              <input type="checkbox" id="equip" name="fundType" value="equip">
+              <label for="equip">Equipment Financing — Finance machinery, vehicles, or tech</label>
+            </div>
+            <div class="checkbox-item">
+              <input type="checkbox" id="loc" name="fundType" value="loc">
+              <label for="loc">Business Line of Credit — Revolving access to capital</label>
+            </div>
+            <div class="checkbox-item">
+              <input type="checkbox" id="cre" name="fundType" value="cre">
+              <label for="cre">Commercial Real Estate — Property acquisition or refinancing</label>
+            </div>
+            <div class="checkbox-item">
+              <input type="checkbox" id="invoice" name="fundType" value="invoice">
+              <label for="invoice">Invoice Factoring — Unlock receivables immediately</label>
+            </div>
+            <div class="checkbox-item">
+              <input type="checkbox" id="unsure" name="fundType" value="unsure">
+              <label for="unsure">Not sure — Help me find the best option</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Purpose of Funding *</label>
+          <select id="fundPurpose">
+            <option value="">Select primary use</option>
+            <option>Working Capital / Cash Flow</option>
+            <option>Equipment Purchase</option>
+            <option>Real Estate / Property</option>
+            <option>Payroll / Staffing</option>
+            <option>Inventory Purchase</option>
+            <option>Marketing / Advertising</option>
+            <option>Renovation / Build-Out</option>
+            <option>Business Acquisition</option>
+            <option>Debt Consolidation / Refinance</option>
+            <option>Expansion / New Location</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>How Quickly Do You Need Funding? *</label>
+          <select id="fundTimeline">
+            <option value="">Select urgency</option>
+            <option>ASAP — Within 24–48 hours</option>
+            <option>This week</option>
+            <option>Within 2 weeks</option>
+            <option>Within 30 days</option>
+            <option>I'm just exploring options</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Any Additional Context? (Optional)</label>
+          <textarea id="fundNotes" placeholder="Tell us anything about your funding situation that might help us find the best option for you..."></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button class="btn-back" onclick="prevStep(2)">← Back</button>
+          <button class="btn-next" onclick="nextStep(2)">Continue to Owner Info →</button>
+        </div>
+      </div>
+
+      <!-- STEP 3: Owner Details -->
+      <div class="form-step" id="step-3">
+        <h2 class="form-step-title">About You, the Owner</h2>
+        <p class="form-step-sub">We need basic owner information to complete your application. Your data is always secure.</p>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name *</label>
+            <input type="text" id="firstName" placeholder="First Name" />
+          </div>
+          <div class="form-group">
+            <label>Last Name *</label>
+            <input type="text" id="lastName" placeholder="Last Name" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Personal Email *</label>
+            <input type="email" id="ownerEmail" placeholder="your@email.com" />
+          </div>
+          <div class="form-group">
+            <label>Mobile Phone *</label>
+            <input type="tel" id="ownerPhone" placeholder="(555) 000-0000" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Ownership % in Business *</label>
+            <select>
+              <option value="">Select</option>
+              <option>100% (Sole Owner)</option>
+              <option>51–99%</option>
+              <option>26–50%</option>
+              <option>25% or less</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Estimated Credit Score *</label>
+            <select id="creditScore">
+              <option value="">Select range</option>
+              <option>Excellent (720+)</option>
+              <option>Good (680–719)</option>
+              <option>Fair (640–679)</option>
+              <option>Below Average (580–639)</option>
+              <option>Poor (Under 580)</option>
+              <option>I don't know</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Any Active Liens, Judgments, or Bankruptcies?</label>
+          <select>
+            <option value="">Select</option>
+            <option>No — Clean record</option>
+            <option>Yes — Active tax lien</option>
+            <option>Yes — Judgment against business</option>
+            <option>Yes — Past bankruptcy (discharged)</option>
+            <option>Yes — Active bankruptcy</option>
+            <option>Multiple of the above</option>
+          </select>
+        </div>
+
+        <div class="form-group" style="margin-top:8px;">
+          <div class="checkbox-item" style="background:rgba(21,101,192,0.05);">
+            <input type="checkbox" id="consent" required>
+            <label for="consent" style="font-size:0.82rem;line-height:1.5;">
+              I agree to be contacted by Xclusive Capital Group regarding my funding application. I understand this is not a hard credit inquiry and my information is kept confidential.
+            </label>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button class="btn-back" onclick="prevStep(3)">← Back</button>
+          <button class="btn-submit" onclick="submitForm()">
+            🔒 Submit Application
+          </button>
+        </div>
+      </div>
+
+      <!-- SUCCESS -->
+      <div class="success-screen" id="successScreen">
+        <div class="success-icon">✅</div>
+        <h2>Application Submitted!</h2>
+        <p>Thank you! Your application is in our system. A dedicated capital advisor will reach out to you within 1–4 business hours to discuss your options.</p>
+        <div style="background:rgba(21,101,192,0.08);border:1px solid rgba(100,181,246,0.2);border-radius:12px;padding:20px;margin:24px 0;text-align:left;">
+          <p style="color:var(--blue-accent);font-weight:600;margin-bottom:12px;">What Happens Next:</p>
+          <ul style="list-style:none;color:var(--text-muted);font-size:0.88rem;line-height:2;">
+            <li>✓ Your advisor reviews your application</li>
+            <li>✓ We match you with optimal lender options</li>
+            <li>✓ You receive funding offers to review</li>
+            <li>✓ Choose your offer & receive funds</li>
+          </ul>
+        </div>
+        <a href="index.html" class="btn-primary" style="display:inline-flex;">← Return Home</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SIDEBAR -->
+  <div class="apply-sidebar">
+    <div class="sidebar-card">
+      <h3>Why Apply With Us?</h3>
+      <div class="sidebar-item">
+        <div class="sidebar-icon">⚡</div>
+        <div class="sidebar-item-text">
+          <strong>Same-Day Decisions</strong>
+          <span>Most applications receive an offer within 4 hours</span>
+        </div>
+      </div>
+      <div class="sidebar-item">
+        <div class="sidebar-icon">🔒</div>
+        <div class="sidebar-item-text">
+          <strong>No Hard Credit Pull</strong>
+          <span>Checking your options won't affect your credit score</span>
+        </div>
+      </div>
+      <div class="sidebar-item">
+        <div class="sidebar-icon">🤝</div>
+        <div class="sidebar-item-text">
+          <strong>Dedicated Advisor</strong>
+          <span>A real person who fights for your best terms</span>
+        </div>
+      </div>
+      <div class="sidebar-item">
+        <div class="sidebar-icon">🏦</div>
+        <div class="sidebar-item-text">
+          <strong>50+ Lenders</strong>
+          <span>We shop the market so you don't have to</span>
+        </div>
+      </div>
+      <div class="sidebar-item">
+        <div class="sidebar-icon">📋</div>
+        <div class="sidebar-item-text">
+          <strong>No Obligation</strong>
+          <span>Review all offers before committing to anything</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar-card">
+      <h3>Basic Requirements</h3>
+      <ul class="qualify-list">
+        <li>At least 6 months in business</li>
+        <li>$10,000+ monthly revenue</li>
+        <li>Active U.S. business bank account</li>
+        <li>No open bankruptcies (most products)</li>
+        <li>U.S.-based business operations</li>
+      </ul>
+      <p style="font-size:0.78rem;color:var(--text-muted);margin-top:14px;line-height:1.6;">Don't meet all requirements? Apply anyway — we have solutions for startups and businesses with challenged credit.</p>
+    </div>
+
+    <div class="sidebar-card" style="text-align:center;">
+      <p style="font-size:0.82rem;color:var(--text-muted);margin-bottom:8px;">Questions? Talk to an advisor now.</p>
+      <a href="tel:+18005551234" class="btn-primary" style="display:inline-flex;width:100%;justify-content:center;">
+        📞 (800) 555-1234
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-bottom" style="border-top:none;padding-top:0;">
+    <p>© 2025 Xclusive Capital Group. All Rights Reserved.</p>
+    <p><a href="#">Privacy Policy</a> · <a href="#">Terms of Service</a></p>
+  </div>
+</footer>
+
+<script>
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 60));
+  function toggleNav() { document.getElementById('navLinks').classList.toggle('open'); }
+
+  let currentStep = 1;
+  const totalSteps = 3;
+
+  function nextStep(from) {
+    if (!validateStep(from)) return;
+    document.getElementById(`step-${from}`).classList.remove('active');
+    document.getElementById(`prog-${from}`).classList.remove('active');
+    document.getElementById(`prog-${from}`).classList.add('done');
+    const next = from + 1;
+    document.getElementById(`step-${next}`).classList.add('active');
+    document.getElementById(`prog-${next}`).classList.add('active');
+    currentStep = next;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function prevStep(from) {
+    document.getElementById(`step-${from}`).classList.remove('active');
+    document.getElementById(`prog-${from}`).classList.remove('active');
+    const prev = from - 1;
+    document.getElementById(`step-${prev}`).classList.add('active');
+    document.getElementById(`prog-${prev}`).classList.remove('done');
+    document.getElementById(`prog-${prev}`).classList.add('active');
+    currentStep = prev;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function validateStep(step) {
+    if (step === 1) {
+      const biz = document.getElementById('bizName').value.trim();
+      const phone = document.getElementById('bizPhone').value.trim();
+      const email = document.getElementById('bizEmail').value.trim();
+      const type = document.getElementById('bizType').value;
+      const industry = document.getElementById('bizIndustry').value;
+      const revenue = document.getElementById('monthlyRevenue').value;
+      if (!biz || !phone || !email || !type || !industry || !revenue) {
+        alert('Please fill out all required fields before continuing.');
+        return false;
+      }
+    }
+    if (step === 2) {
+      const amount = document.getElementById('fundAmount').value;
+      const purpose = document.getElementById('fundPurpose').value;
+      const timeline = document.getElementById('fundTimeline').value;
+      if (!amount || !purpose || !timeline) {
+        alert('Please fill out all required fields before continuing.');
+        return false;
+      }
+    }
+    return true;
+  }
+
+  async function submitForm() {
+    const first = document.getElementById('firstName').value.trim();
+    const last = document.getElementById('lastName').value.trim();
+    const email = document.getElementById('ownerEmail').value.trim();
+    const phone = document.getElementById('ownerPhone').value.trim();
+    const consent = document.getElementById('consent').checked;
+    if (!first || !last || !email || !phone) {
+      alert('Please fill out all required fields.');
+      return;
+    }
+    if (!consent) {
+      alert('Please agree to the consent checkbox to submit.');
+      return;
+    }
+
+    // Collect all fund type checkboxes
+    const fundTypes = [...document.querySelectorAll('input[name="fundType"]:checked')].map(cb => cb.value).join(', ');
+
+    const payload = {
+      form_type: 'funding_application',
+      // Step 1 — Business Info
+      business_name:    document.getElementById('bizName').value.trim(),
+      business_type:    document.getElementById('bizType').value,
+      industry:         document.getElementById('bizIndustry').value,
+      business_phone:   document.getElementById('bizPhone').value.trim(),
+      business_email:   document.getElementById('bizEmail').value.trim(),
+      state:            document.getElementById('bizState').value,
+      years_in_business: document.getElementById('bizYears').value,
+      monthly_revenue:  document.getElementById('monthlyRevenue').value,
+      // Step 2 — Funding Needs
+      funding_amount:   document.getElementById('fundAmount').value,
+      funding_types:    fundTypes,
+      funding_purpose:  document.getElementById('fundPurpose').value,
+      funding_timeline: document.getElementById('fundTimeline').value,
+      additional_notes: document.getElementById('fundNotes').value.trim(),
+      // Step 3 — Owner Details
+      first_name:       first,
+      last_name:        last,
+      full_name:        `${first} ${last}`,
+      owner_email:      email,
+      owner_phone:      phone,
+      credit_score:     document.getElementById('creditScore').value,
+      consent:          consent,
+    };
+
+    const WEBHOOK = 'https://services.leadconnectorhq.com/hooks/Fv3xcauNdlWz6DzKtGSa/webhook-trigger/000f5c17-ca8f-4f3e-aebd-aa94756db58f';
+
+    try {
+      await fetch(WEBHOOK, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+        mode: 'no-cors'  // GHL webhooks don't return CORS headers — fire-and-forget
+      });
+    } catch (e) {
+      console.error('Webhook error:', e);
+    }
+
+    // Show success regardless (no-cors means we can't inspect response)
+    document.getElementById('step-3').classList.remove('active');
+    document.getElementById('successScreen').style.display = 'block';
+    document.getElementById('stepProgress').style.display = 'none';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+</body>
+</html>

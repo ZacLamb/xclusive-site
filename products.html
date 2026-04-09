@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Funding Products | Xclusive Capital Group</title>
+  <meta name="description" content="Explore all business funding products from Xclusive Capital Group. MCA, SBA loans, equipment financing, lines of credit, commercial real estate, and invoice factoring." />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .product-hero { background: var(--gradient-hero); padding: 220px 5% 80px; position: relative; overflow: hidden; }
+    .product-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 50% at 70% 50%, rgba(21,101,192,0.15), transparent); }
+    .product-hero-content { position: relative; z-index: 1; max-width: 700px; }
+
+    .product-section { padding: 100px 5%; }
+    .product-section:nth-child(even) { background: var(--navy-mid); }
+
+    .product-detail {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .product-detail.reverse { }
+    .product-detail.reverse .product-detail-visual { order: -1; }
+
+    .product-detail-content {}
+
+    .product-amount-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(21,101,192,0.15);
+      border: 1px solid rgba(100,181,246,0.3);
+      border-radius: 8px;
+      padding: 8px 16px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.4rem;
+      color: var(--blue-accent);
+      letter-spacing: 0.05em;
+      margin-bottom: 20px;
+    }
+
+    .product-detail h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+
+    .product-detail h2 em { color: var(--blue-accent); font-style: italic; }
+
+    .product-detail p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.8;
+      margin-bottom: 28px;
+    }
+
+    .product-specs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .spec-item {
+      background: rgba(11,22,38,0.8);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 16px;
+    }
+
+    .spec-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .spec-value {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--white);
+    }
+
+    .product-detail-visual {
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      aspect-ratio: 4/3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .product-pros {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 32px;
+    }
+
+    .product-pros li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--silver-light);
+      font-size: 0.9rem;
+    }
+
+    .product-pros li::before {
+      content: '✓';
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      background: rgba(21,101,192,0.2);
+      color: var(--blue-accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 900px) {
+      .product-detail { grid-template-columns: 1fr; gap: 40px; }
+      .product-detail.reverse .product-detail-visual { order: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">
+    <img src="logo.png" alt="Xclusive Capital Group" onerror="this.style.display='none'">
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="products.html" class="active">Funding</a></li>
+    <li><a href="how-it-works.html">How It Works</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="apply.html" class="nav-cta">Apply Now</a></li>
+  </ul>
+  <div class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- HERO -->
+<div class="product-hero">
+  <div class="product-hero-content">
+    <div class="section-label">Funding Solutions</div>
+    <h1 class="section-title" style="font-size:clamp(2.5rem,5vw,4rem);">Capital Built For<br><em>Your Business</em></h1>
+    <p class="section-subtitle">Six distinct funding solutions — each designed for a different stage, need, and goal. We'll help you find the right fit.</p>
+    <div style="margin-top:36px;display:flex;gap:16px;flex-wrap:wrap;">
+      <a href="apply.html" class="btn-primary">Apply Now</a>
+      <a href="contact.html" class="btn-outline">Speak to an Advisor</a>
+    </div>
+  </div>
+</div>
+
+<!-- MCA -->
+<div id="mca" class="product-section">
+  <div class="product-detail">
+    <div class="product-detail-content">
+      <div class="section-label">Most Popular</div>
+      <div class="product-amount-badge">⚡ $5,000 – $2,000,000</div>
+      <h2>Merchant<br><em>Cash Advance</em></h2>
+      <p>Our most popular product. Receive a lump sum upfront in exchange for a percentage of future sales. Repayment is automatic and adjusts with your revenue — slow months mean lower payments.</p>
+      <div class="product-specs">
+        <div class="spec-item"><div class="spec-label">Funding Range</div><div class="spec-value">$5K – $2M</div></div>
+        <div class="spec-item"><div class="spec-label">Decision Time</div><div class="spec-value">2–24 Hours</div></div>
+        <div class="spec-item"><div class="spec-label">Repayment</div><div class="spec-value">Daily / Weekly Split</div></div>
+        <div class="spec-item"><div class="spec-label">Min. Monthly Rev.</div><div class="spec-value">$10,000+</div></div>
+      </div>
+      <ul class="product-pros">
+        <li>No collateral required</li>
+        <li>All credit profiles considered</li>
+        <li>Payments flex with your revenue</li>
+        <li>Renewal options as you pay down</li>
+        <li>Funding as fast as same day</li>
+      </ul>
+      <a href="apply.html" class="btn-primary">Get Started</a>
+    </div>
+    <div class="product-detail-visual">
+      <svg viewBox="0 0 500 380" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+        <defs>
+          <linearGradient id="mcaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#0b1626"/>
+            <stop offset="100%" style="stop-color:#112240"/>
+          </linearGradient>
+          <linearGradient id="barGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:#42a5f5"/>
+            <stop offset="100%" style="stop-color:#1565c0"/>
+          </linearGradient>
+        </defs>
+        <rect width="500" height="380" fill="url(#mcaGrad)"/>
+        <g opacity="0.05" stroke="#64b5f6" stroke-width="1">
+          <line x1="0" y1="76" x2="500" y2="76"/>
+          <line x1="0" y1="152" x2="500" y2="152"/>
+          <line x1="0" y1="228" x2="500" y2="228"/>
+          <line x1="0" y1="304" x2="500" y2="304"/>
+          <line x1="100" y1="0" x2="100" y2="380"/>
+          <line x1="200" y1="0" x2="200" y2="380"/>
+          <line x1="300" y1="0" x2="300" y2="380"/>
+          <line x1="400" y1="0" x2="400" y2="380"/>
+        </g>
+        <!-- Bar chart -->
+        <rect x="50" y="220" width="44" height="120" rx="4" fill="url(#barGrad)" opacity="0.5"/>
+        <rect x="120" y="180" width="44" height="160" rx="4" fill="url(#barGrad)" opacity="0.6"/>
+        <rect x="190" y="130" width="44" height="210" rx="4" fill="url(#barGrad)" opacity="0.75"/>
+        <rect x="260" y="80" width="44" height="260" rx="4" fill="url(#barGrad)" opacity="0.9"/>
+        <rect x="330" y="50" width="44" height="290" rx="4" fill="url(#barGrad)"/>
+        <rect x="400" y="30" width="44" height="310" rx="4" fill="url(#barGrad)"/>
+        <!-- Labels -->
+        <text x="72" y="210" text-anchor="middle" font-family="'Bebas Neue'" font-size="12" fill="#64b5f6">JAN</text>
+        <text x="142" y="170" text-anchor="middle" font-family="'Bebas Neue'" font-size="12" fill="#64b5f6">FEB</text>
+        <text x="212" y="120" text-anchor="middle" font-family="'Bebas Neue'" font-size="12" fill="#64b5f6">MAR</text>
+        <text x="282" y="70" text-anchor="middle" font-family="'Bebas Neue'" font-size="12" fill="#64b5f6">APR</text>
+        <text x="352" y="40" text-anchor="middle" font-family="'Bebas Neue'" font-size="12" fill="#64b5f6">MAY</text>
+        <text x="422" y="20" text-anchor="middle" font-family="'Bebas Neue'" font-size="12" fill="#64b5f6">JUN</text>
+        <!-- Growth arrow -->
+        <polyline points="72,230 142,190 212,140 282,90 352,60 422,40" fill="none" stroke="#42a5f5" stroke-width="2.5" stroke-dasharray="5,3" opacity="0.7"/>
+        <!-- Watermark -->
+        <text x="250" y="360" text-anchor="middle" font-family="'DM Sans'" font-size="10" fill="rgba(100,181,246,0.2)" letter-spacing="4">REVENUE GROWTH</text>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<!-- SBA -->
+<div id="sba" class="product-section">
+  <div class="product-detail reverse">
+    <div class="product-detail-visual">
+      <svg viewBox="0 0 500 380" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+        <rect width="500" height="380" fill="#0b1626"/>
+        <g opacity="0.05" stroke="#64b5f6" stroke-width="1">
+          <line x1="0" y1="76" x2="500" y2="76"/>
+          <line x1="0" y1="152" x2="500" y2="152"/>
+          <line x1="0" y1="228" x2="500" y2="228"/>
+          <line x1="0" y1="304" x2="500" y2="304"/>
+          <line x1="100" y1="0" x2="100" y2="380"/>
+          <line x1="200" y1="0" x2="200" y2="380"/>
+          <line x1="300" y1="0" x2="300" y2="380"/>
+          <line x1="400" y1="0" x2="400" y2="380"/>
+        </g>
+        <!-- Capitol building -->
+        <rect x="150" y="200" width="200" height="130" rx="2" fill="rgba(21,101,192,0.4)" stroke="rgba(100,181,246,0.4)" stroke-width="1"/>
+        <polygon points="150,200 250,120 350,200" fill="rgba(21,101,192,0.6)" stroke="rgba(100,181,246,0.5)" stroke-width="1"/>
+        <rect x="230" y="120" width="40" height="40" rx="20" fill="rgba(33,150,243,0.5)" stroke="rgba(100,181,246,0.5)" stroke-width="1"/>
+        <!-- Columns -->
+        <rect x="170" y="200" width="12" height="120" rx="2" fill="rgba(100,181,246,0.3)"/>
+        <rect x="198" y="200" width="12" height="120" rx="2" fill="rgba(100,181,246,0.3)"/>
+        <rect x="226" y="200" width="12" height="120" rx="2" fill="rgba(100,181,246,0.3)"/>
+        <rect x="262" y="200" width="12" height="120" rx="2" fill="rgba(100,181,246,0.3)"/>
+        <rect x="290" y="200" width="12" height="120" rx="2" fill="rgba(100,181,246,0.3)"/>
+        <rect x="318" y="200" width="12" height="120" rx="2" fill="rgba(100,181,246,0.3)"/>
+        <!-- Steps -->
+        <rect x="130" y="330" width="240" height="12" rx="2" fill="rgba(21,101,192,0.5)"/>
+        <rect x="110" y="342" width="280" height="12" rx="2" fill="rgba(21,101,192,0.4)"/>
+        <rect x="90" y="354" width="320" height="12" rx="2" fill="rgba(21,101,192,0.3)"/>
+        <!-- Stars -->
+        <text x="250" y="90" text-anchor="middle" font-size="24" fill="rgba(100,181,246,0.5)">★</text>
+        <text x="180" y="115" text-anchor="middle" font-size="14" fill="rgba(100,181,246,0.3)">★</text>
+        <text x="320" y="115" text-anchor="middle" font-size="14" fill="rgba(100,181,246,0.3)">★</text>
+        <!-- Label -->
+        <text x="250" y="25" text-anchor="middle" font-family="Bebas Neue" font-size="20" fill="rgba(100,181,246,0.6)" letter-spacing="5">SBA BACKED</text>
+      </svg>
+    </div>
+    <div class="product-detail-content">
+      <div class="section-label">Best for Established Businesses</div>
+      <div class="product-amount-badge">🏛️ $50,000 – $5,000,000</div>
+      <h2>SBA <em>Loans</em></h2>
+      <p>Government-backed loans with the most favorable rates and terms on the market. Ideal for businesses with at least 2 years of operation looking to make strategic investments.</p>
+      <div class="product-specs">
+        <div class="spec-item"><div class="spec-label">Funding Range</div><div class="spec-value">$50K – $5M</div></div>
+        <div class="spec-item"><div class="spec-label">Term Length</div><div class="spec-value">5 – 25 Years</div></div>
+        <div class="spec-item"><div class="spec-label">Interest Rates</div><div class="spec-value">Prime + 2.25–4.75%</div></div>
+        <div class="spec-item"><div class="spec-label">Min. Time in Biz</div><div class="spec-value">2 Years</div></div>
+      </div>
+      <ul class="product-pros">
+        <li>Lowest interest rates available</li>
+        <li>Longest repayment terms</li>
+        <li>Available for real estate & acquisitions</li>
+        <li>Can refinance existing high-cost debt</li>
+        <li>Up to 90% LTV on commercial property</li>
+      </ul>
+      <a href="apply.html" class="btn-primary">Get Started</a>
+    </div>
+  </div>
+</div>
+
+<!-- EQUIPMENT -->
+<div id="equipment" class="product-section">
+  <div class="product-detail">
+    <div class="product-detail-content">
+      <div class="section-label">For Capital Assets</div>
+      <div class="product-amount-badge">🔧 $10,000 – $5,000,000</div>
+      <h2>Equipment<br><em>Financing</em></h2>
+      <p>Finance the machinery, vehicles, technology, or specialized tools that power your business. The equipment itself serves as collateral — keeping your working capital intact for daily operations.</p>
+      <div class="product-specs">
+        <div class="spec-item"><div class="spec-label">Funding Range</div><div class="spec-value">$10K – $5M</div></div>
+        <div class="spec-item"><div class="spec-label">Term Length</div><div class="spec-value">24 – 84 Months</div></div>
+        <div class="spec-item"><div class="spec-label">Decision Time</div><div class="spec-value">24–72 Hours</div></div>
+        <div class="spec-item"><div class="spec-label">Down Payment</div><div class="spec-value">0–20%</div></div>
+      </div>
+      <ul class="product-pros">
+        <li>Equipment serves as own collateral</li>
+        <li>Up to 100% financing available</li>
+        <li>New and used equipment eligible</li>
+        <li>Section 179 tax deduction eligible</li>
+        <li>Fixed payments for easy budgeting</li>
+      </ul>
+      <a href="apply.html" class="btn-primary">Get Started</a>
+    </div>
+    <div class="product-detail-visual">
+      <svg viewBox="0 0 500 380" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+        <rect width="500" height="380" fill="#0b1626"/>
+        <g opacity="0.05" stroke="#64b5f6" stroke-width="1">
+          <line x1="0" y1="76" x2="500" y2="76"/>
+          <line x1="0" y1="152" x2="500" y2="152"/>
+          <line x1="0" y1="228" x2="500" y2="228"/>
+          <line x1="0" y1="304" x2="500" y2="304"/>
+          <line x1="100" y1="0" x2="100" y2="380"/>
+          <line x1="200" y1="0" x2="200" y2="380"/>
+          <line x1="300" y1="0" x2="300" y2="380"/>
+          <line x1="400" y1="0" x2="400" y2="380"/>
+        </g>
+        <!-- Truck silhouette -->
+        <rect x="60" y="220" width="280" height="100" rx="8" fill="rgba(21,101,192,0.5)" stroke="rgba(100,181,246,0.5)" stroke-width="1.5"/>
+        <rect x="260" y="170" width="140" height="150" rx="8" fill="rgba(21,101,192,0.65)" stroke="rgba(100,181,246,0.5)" stroke-width="1.5"/>
+        <!-- Cab windows -->
+        <rect x="274" y="184" width="52" height="38" rx="4" fill="rgba(100,181,246,0.35)"/>
+        <rect x="336" y="184" width="52" height="38" rx="4" fill="rgba(100,181,246,0.25)"/>
+        <!-- Wheels -->
+        <circle cx="120" cy="330" r="28" fill="#04080f" stroke="rgba(100,181,246,0.5)" stroke-width="2"/>
+        <circle cx="120" cy="330" r="14" fill="rgba(21,101,192,0.5)"/>
+        <circle cx="240" cy="330" r="28" fill="#04080f" stroke="rgba(100,181,246,0.5)" stroke-width="2"/>
+        <circle cx="240" cy="330" r="14" fill="rgba(21,101,192,0.5)"/>
+        <circle cx="360" cy="330" r="28" fill="#04080f" stroke="rgba(100,181,246,0.5)" stroke-width="2"/>
+        <circle cx="360" cy="330" r="14" fill="rgba(21,101,192,0.5)"/>
+        <!-- Headlight -->
+        <rect x="392" y="220" width="20" height="12" rx="3" fill="rgba(200,220,255,0.7)"/>
+        <!-- Road -->
+        <rect x="0" y="355" width="500" height="25" fill="rgba(4,8,15,0.8)"/>
+        <rect x="0" y="353" width="500" height="4" fill="rgba(100,181,246,0.1)"/>
+        <!-- Gear icon -->
+        <text x="250" y="55" text-anchor="middle" font-size="28" fill="rgba(100,181,246,0.4)">⚙️</text>
+        <text x="250" y="25" text-anchor="middle" font-family="Bebas Neue" font-size="16" fill="rgba(100,181,246,0.4)" letter-spacing="4">EQUIPMENT FINANCING</text>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<!-- LINE OF CREDIT -->
+<div id="loc" class="product-section">
+  <div class="product-detail reverse">
+    <div class="product-detail-visual">
+      <svg viewBox="0 0 500 380" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+        <rect width="500" height="380" fill="#0b1626"/>
+        <g opacity="0.05" stroke="#64b5f6" stroke-width="1">
+          <line x1="0" y1="76" x2="500" y2="76"/>
+          <line x1="0" y1="152" x2="500" y2="152"/>
+          <line x1="0" y1="228" x2="500" y2="228"/>
+          <line x1="0" y1="304" x2="500" y2="304"/>
+        </g>
+        <!-- Credit card mockup -->
+        <rect x="80" y="80" width="340" height="220" rx="18" fill="rgba(21,101,192,0.55)" stroke="rgba(100,181,246,0.5)" stroke-width="1.5"/>
+        <rect x="80" y="80" width="340" height="80" rx="18" fill="rgba(13,71,161,0.8)"/>
+        <rect x="80" y="140" width="340" height="20" fill="rgba(13,71,161,0.8)"/>
+        <!-- Card chip -->
+        <rect x="110" y="170" width="44" height="34" rx="5" fill="rgba(201,168,76,0.6)" stroke="rgba(201,168,76,0.8)" stroke-width="1"/>
+        <line x1="110" y1="187" x2="154" y2="187" stroke="rgba(201,168,76,0.5)" stroke-width="1"/>
+        <line x1="132" y1="170" x2="132" y2="204" stroke="rgba(201,168,76,0.5)" stroke-width="1"/>
+        <!-- Card number -->
+        <text x="112" y="225" font-family="Bebas Neue" font-size="18" fill="rgba(255,255,255,0.6)" letter-spacing="4">XXXX  XXXX  XXXX  4291</text>
+        <!-- Card name -->
+        <text x="112" y="268" font-family="DM Sans" font-size="11" fill="rgba(255,255,255,0.5)" letter-spacing="2">BUSINESS OWNER</text>
+        <!-- Logo area -->
+        <circle cx="370" cy="115" r="18" fill="rgba(255,255,255,0.1)"/>
+        <circle cx="388" cy="115" r="18" fill="rgba(100,181,246,0.2)"/>
+        <!-- Usage bar -->
+        <rect x="80" y="330" width="340" height="6" rx="3" fill="rgba(100,181,246,0.1)"/>
+        <rect x="80" y="330" width="180" height="6" rx="3" fill="rgba(33,150,243,0.7)"/>
+        <text x="80" y="322" font-family="DM Sans" font-size="10" fill="rgba(100,181,246,0.5)">CREDIT USED</text>
+        <text x="420" y="322" text-anchor="end" font-family="Bebas Neue" font-size="12" fill="rgba(100,181,246,0.7)">$50K / $150K</text>
+      </svg>
+    </div>
+    <div class="product-detail-content">
+      <div class="section-label">Flexible Capital Access</div>
+      <div class="product-amount-badge">🔄 $10,000 – $500,000</div>
+      <h2>Business Line<br>of <em>Credit</em></h2>
+      <p>Draw from your credit line whenever you need capital, pay it back, and draw again. Pay interest only on what you use. Perfect for businesses with cyclical needs or unpredictable expenses.</p>
+      <div class="product-specs">
+        <div class="spec-item"><div class="spec-label">Credit Limit</div><div class="spec-value">$10K – $500K</div></div>
+        <div class="spec-item"><div class="spec-label">Draw Period</div><div class="spec-value">12 – 36 Months</div></div>
+        <div class="spec-item"><div class="spec-label">Pay Interest On</div><div class="spec-value">Amount Drawn Only</div></div>
+        <div class="spec-item"><div class="spec-label">Revolving</div><div class="spec-value">Yes — Reusable</div></div>
+      </div>
+      <ul class="product-pros">
+        <li>Draw only what you need, when you need it</li>
+        <li>Interest charged only on drawn funds</li>
+        <li>Revolving — repay and redraw as needed</li>
+        <li>Builds business credit history</li>
+        <li>No collateral on many programs</li>
+      </ul>
+      <a href="apply.html" class="btn-primary">Get Started</a>
+    </div>
+  </div>
+</div>
+
+<!-- COMMERCIAL RE & INVOICE (compact cards) -->
+<section style="padding: 100px 5%; background: var(--navy);">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:60px;">
+      <div class="section-label" style="justify-content:center;">More Solutions</div>
+      <h2 class="section-title">Additional <em>Products</em></h2>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;">
+      <div id="realestate" class="card">
+        <div class="icon-badge">🏢</div>
+        <div class="product-amount-badge" style="font-size:1.1rem;">$100,000 – $5,000,000</div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700;color:var(--white);margin-bottom:12px;">Commercial Real Estate</h3>
+        <p style="color:var(--text-muted);font-size:0.9rem;line-height:1.75;margin-bottom:20px;">Acquire, renovate, or refinance commercial property. Bridge loans, hard money, and permanent financing for income-producing properties, owner-occupied commercial, and new construction.</p>
+        <div class="product-specs" style="margin-bottom:24px;">
+          <div class="spec-item"><div class="spec-label">LTV</div><div class="spec-value">Up to 90%</div></div>
+          <div class="spec-item"><div class="spec-label">Terms</div><div class="spec-value">6 Months – 25 Years</div></div>
+        </div>
+        <a href="apply.html" class="btn-primary">Apply Now</a>
+      </div>
+      <div id="invoice" class="card">
+        <div class="icon-badge">📄</div>
+        <div class="product-amount-badge" style="font-size:1.1rem;">$10,000 – $2,000,000</div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700;color:var(--white);margin-bottom:12px;">Invoice Factoring</h3>
+        <p style="color:var(--text-muted);font-size:0.9rem;line-height:1.75;margin-bottom:20px;">Turn your outstanding invoices into immediate working capital. Instead of waiting 30–90 days for your clients to pay, sell your receivables and get funded within 24 hours.</p>
+        <div class="product-specs" style="margin-bottom:24px;">
+          <div class="spec-item"><div class="spec-label">Advance Rate</div><div class="spec-value">Up to 95%</div></div>
+          <div class="spec-item"><div class="spec-label">Funding Speed</div><div class="spec-value">24 Hours</div></div>
+        </div>
+        <a href="apply.html" class="btn-primary">Apply Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-banner">
+  <div class="cta-banner-content">
+    <h2>Not Sure Which Product<br>Is Right For You?</h2>
+    <p>Our advisors will analyze your situation and recommend the best funding solution — at no cost or obligation.</p>
+    <a href="apply.html" class="btn-primary" style="display:inline-flex;background:#fff;color:var(--blue-primary);">
+      Get a Free Consultation
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="footer-logo">
+      </a>
+      <p>Empowering businesses with the capital they need to grow, expand, and thrive.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Funding</h4>
+      <ul>
+        <li><a href="#mca">Merchant Cash Advance</a></li>
+        <li><a href="#sba">SBA Loans</a></li>
+        <li><a href="#equipment">Equipment Financing</a></li>
+        <li><a href="#loc">Line of Credit</a></li>
+        <li><a href="#realestate">Commercial Real Estate</a></li>
+        <li><a href="#invoice">Invoice Factoring</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="how-it-works.html">How It Works</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="apply.html">Apply Now</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+18005551234">(800) 555-1234</a></li>
+        <li><a href="/cdn-cgi/l/email-protection#96fff8f0f9d6eef5fae3e5ffe0f3f5f7e6ffe2f7faf1e4f9e3e6b8f5f9fb"><span class="__cf_email__" data-cfemail="fc95929a93bc849f90898f958a999f9d8c95889d909b8e93898cd29f9391">[email&#160;protected]</span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Xclusive Capital Group. All Rights Reserved.</p>
+    <p><a href="#">Privacy Policy</a> · <a href="#">Terms of Service</a></p>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  document.getElementById('navbar').addEventListener('scroll', ()

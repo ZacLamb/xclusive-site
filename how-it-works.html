@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How It Works | Xclusive Capital Group</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .timeline { padding: 100px 5%; }
+    .timeline-inner { max-width: 900px; margin: 0 auto; }
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 40px;
+      margin-bottom: 64px;
+      position: relative;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: 39px;
+      top: 80px;
+      bottom: -40px;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--blue-primary), transparent);
+    }
+    .timeline-item:last-child::before { display: none; }
+    .timeline-num {
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      background: var(--gradient-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      color: #fff;
+      box-shadow: 0 8px 30px rgba(21,101,192,0.4);
+      flex-shrink: 0;
+    }
+    .timeline-content {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 36px;
+    }
+    .timeline-content h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    .timeline-content p {
+      color: var(--text-muted);
+      font-size: 0.93rem;
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    .timeline-detail {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .timeline-detail li {
+      background: rgba(21,101,192,0.15);
+      border: 1px solid rgba(100,181,246,0.2);
+      border-radius: 100px;
+      padding: 5px 14px;
+      font-size: 0.78rem;
+      color: var(--blue-accent);
+      font-weight: 500;
+    }
+
+    .faq-section { padding: 80px 5%; background: var(--navy-mid); }
+    .faq-inner { max-width: 800px; margin: 0 auto; }
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: 24px 0;
+    }
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--white);
+      font-size: 0.98rem;
+      gap: 16px;
+    }
+    .faq-toggle {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: rgba(21,101,192,0.2);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--blue-accent);
+      flex-shrink: 0;
+      font-size: 1.2rem;
+      transition: transform 0.3s;
+    }
+    .faq-answer {
+      display: none;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.8;
+      padding-top: 16px;
+    }
+    .faq-item.open .faq-toggle { transform: rotate(45deg); }
+    .faq-item.open .faq-answer { display: block; }
+
+    @media (max-width: 600px) {
+      .timeline-item { grid-template-columns: 60px 1fr; gap: 20px; }
+      .timeline-num { width: 60px; height: 60px; font-size: 1.5rem; }
+      .timeline-item::before { left: 29px; }
+    }
+  </style>
+</head>
+<body>
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">
+    <img src="logo.png" alt="Xclusive Capital Group" onerror="this.style.display='none'">
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="products.html">Funding</a></li>
+    <li><a href="how-it-works.html" class="active">How It Works</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="apply.html" class="nav-cta">Apply Now</a></li>
+  </ul>
+  <div class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-content">
+    <div class="section-label">Simple Process</div>
+    <h1 class="section-title">From Application<br>to <em>Funded</em></h1>
+    <p class="section-subtitle">Our process is designed to get capital in your hands as fast as possible, with zero confusion and full transparency at every step.</p>
+  </div>
+</div>
+
+<div class="timeline">
+  <div class="timeline-inner">
+
+    <div class="timeline-item">
+      <div class="timeline-num">1</div>
+      <div class="timeline-content">
+        <h3>Apply Online — 5 Minutes</h3>
+        <p>Complete our simple online application with basic information about your business, your funding needs, and your ownership. No lengthy forms, no business plan required, no commitment.</p>
+        <p>All we need to get started: business name, monthly revenue, time in business, and the amount you're looking for.</p>
+        <ul class="timeline-detail">
+          <li>5-minute form</li>
+          <li>No hard credit pull</li>
+          <li>No business plan required</li>
+          <li>100% secure & confidential</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-num">2</div>
+      <div class="timeline-content">
+        <h3>Advisor Review & Outreach</h3>
+        <p>Within 1–4 hours of submitting, your dedicated capital advisor contacts you to discuss your application and goals. This is a real conversation — not a chatbot, not a call center.</p>
+        <p>Your advisor will ask a few follow-up questions and may request 3–6 months of bank statements to build your funding profile.</p>
+        <ul class="timeline-detail">
+          <li>Real human advisor</li>
+          <li>1–4 hr response time</li>
+          <li>Industry-specific expertise</li>
+          <li>No pressure sales</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-num">3</div>
+      <div class="timeline-content">
+        <h3>Market Matching — 50+ Lenders</h3>
+        <p>We submit your profile to our network of 50+ vetted lending partners simultaneously. This competitive process means lenders compete for your business — driving better rates and terms for you.</p>
+        <p>We filter out any offers that don't meet our standards for fairness and transparency before presenting them to you.</p>
+        <ul class="timeline-detail">
+          <li>50+ lender network</li>
+          <li>Simultaneous submissions</li>
+          <li>Offer vetting & filtering</li>
+          <li>Multiple options presented</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-num">4</div>
+      <div class="timeline-content">
+        <h3>Review Your Offers</h3>
+        <p>Your advisor presents all qualifying offers with a side-by-side comparison — total cost, factor rate, payment amounts, and terms. We explain everything in plain English, no financial jargon.</p>
+        <p>You're never pressured. Take the time you need to make the right decision for your business. Declining an offer costs you nothing.</p>
+        <ul class="timeline-detail">
+          <li>Side-by-side comparison</li>
+          <li>Plain-language explanations</li>
+          <li>No expiration pressure</li>
+          <li>Advisor guidance on best fit</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-num">5</div>
+      <div class="timeline-content">
+        <h3>Sign & Get Funded</h3>
+        <p>Once you've chosen the offer that works best, your advisor handles all coordination with the lender. You'll sign a funding agreement digitally, and funds are deposited directly to your business bank account.</p>
+        <p>For most MCA and line of credit products, this happens within the same business day. SBA and commercial real estate loans have longer processing windows.</p>
+        <ul class="timeline-detail">
+          <li>Digital signing</li>
+          <li>Same-day funding available</li>
+          <li>Direct bank deposit</li>
+          <li>Ongoing advisor support</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="faq-section">
+  <div class="faq-inner">
+    <div style="text-align:center;margin-bottom:50px;">
+      <div class="section-label" style="justify-content:center;">FAQ</div>
+      <h2 class="section-title">Common <em>Questions</em></h2>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">
+        Will applying hurt my credit score?
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-answer">No. Our initial application process only performs a soft credit inquiry, which does not affect your credit score. A hard pull is only initiated with your explicit permission, after you've agreed to move forward with a specific funding offer.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">
+        How fast can I actually get funded?
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-answer">For Merchant Cash Advances and Lines of Credit, same-day and next-business-day funding is common once your application is approved. Equipment financing typically takes 2–5 business days. SBA loans and commercial real estate deals have longer timelines, typically 30–90 days, due to the nature of the programs.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">
+        What do I need to qualify?
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-answer">Basic requirements for most products include: at least 6 months in business, $10,000+ in monthly revenue, and an active U.S. business bank account. Credit score requirements vary by product — we have options for all credit profiles, including challenged credit. Apply and let your advisor find the right match.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">
+        Is Xclusive Capital Group a direct lender?
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-answer">We are a business finance consulting and capital advisory firm, not a direct lender. We work with a network of 50+ vetted lenders and financial institutions to source the most competitive funding for your business. This means you get more options, better rates, and a true advocate in your corner — at no added cost to you.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">
+        How much does it cost to apply?
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-answer">Applying is completely free. Our fees are paid by the lender when a deal is funded — you never pay us directly for our services. All costs associated with your funding are fully disclosed in your offer documents before you sign anything.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">
+        Can I apply if I have bad credit?
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-answer">Yes. We work with businesses across all credit profiles. While some products (like SBA loans) have credit requirements, others — including Merchant Cash Advances and invoice factoring — rely more on your business revenue and cash flow than your personal credit score. Apply and let your advisor find what fits.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFAQ(this)">
+        What documents will I need?
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-answer">For most products, you'll need: 3–6 months of business bank statements, a voided business check, and a valid government-issued ID. Some programs may also request tax returns, profit & loss statements, or a business license. Your advisor will walk you through exactly what's needed after reviewing your application.</div>
+    </div>
+  </div>
+</div>
+
+<div class="cta-banner">
+  <div class="cta-banner-content">
+    <h2>Ready to Start Your<br>Application?</h2>
+    <p>5 minutes. No hard credit pull. No obligation. A dedicated advisor will reach out within hours.</p>
+    <a href="apply.html" class="btn-primary" style="display:inline-flex;background:#fff;color:var(--blue-primary);">
+      Apply Now — It's Free
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="footer-logo">
+      </a>
+      <p>Empowering businesses with the capital they need to grow.</p>
+    </div>
+    <div class="footer-col"><h4>Funding</h4><ul>
+      <li><a href="products.html#mca">Merchant Cash Advance</a></li>
+      <li><a href="products.html#sba">SBA Loans</a></li>
+      <li><a href="products.html#equipment">Equipment Financing</a></li>
+      <li><a href="products.html#loc">Line of Credit</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Company</h4><ul>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="how-it-works.html">How It Works</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="apply.html">Apply Now</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul>
+      <li><a href="tel:+18005551234">(800) 555-1234</a></li>
+      <li><a href="/cdn-cgi/l/email-protection#e1888f878ea199828d94928897848280918895808d86938e9491cf828e8c"><span class="__cf_email__" data-cfemail="80e9eee6efc0f8e3ecf5f3e9f6e5e3e1f0e9f4e1ece7f2eff5f0aee3efed">[email&#160;protected]</span></a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Xclusive Capital Group. All Rights Reserved.</p>
+    <p><a href="#">Privacy Policy</a> · <a href="#">Terms</a></p>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  window.addEventListener('scroll', () => document.getElementById('navbar').class
