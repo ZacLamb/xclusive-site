@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Xclusive Capital Group | Business Funding Up To $5 Million</title>
+  <meta name="description" content="Same-day business funding decisions. Merchant Cash Advances, SBA loans, equipment financing, and more. Xclusive Capital Group funds ambitious businesses." />
+  <style>
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      background: var(--gradient-hero);
+      display: flex;
+      align-items: center;
+      padding: 220px 5% 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 60% at 75% 45%, rgba(21,101,192,0.18), transparent),
+        radial-gradient(ellipse 40% 40% at 20% 80%, rgba(13,59,122,0.2), transparent);
+    }
+
+    .hero-grid-lines {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(100,181,246,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(100,181,246,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    .hero-container {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      max-width: 1300px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .hero-content {}
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(33,150,243,0.1);
+      border: 1px solid rgba(100,181,246,0.3);
+      border-radius: 100px;
+      padding: 6px 16px 6px 10px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--blue-accent);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+      animation: fadeUp 0.6s ease both;
+    }
+
+    .hero-badge-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--blue-bright);
+      animation: pulse-glow 2s infinite;
+    }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 5.5vw, 5rem);
+      font-weight: 700;
+      line-height: 1.08;
+      color: var(--white);
+      margin-bottom: 24px;
+      animation: fadeUp 0.6s ease 0.1s both;
+    }
+
+    .hero-title .accent { color: var(--blue-accent); font-style: italic; }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+      color: var(--silver);
+      line-height: 1.75;
+      max-width: 520px;
+      margin-bottom: 40px;
+      animation: fadeUp 0.6s ease 0.2s both;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 52px;
+      animation: fadeUp 0.6s ease 0.3s both;
+    }
+
+    .hero-visual {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      animation: fadeUp 0.8s ease 0.2s both;
+    }
+
+    .hero-card {
+      background: rgba(11, 22, 38, 0.8);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 32px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--blue-bright), transparent);
+    }
+
+    .hero-card-main {
+      background: linear-gradient(135deg, rgba(11,22,38,0.95), rgba(17,34,64,0.9));
+    }
+
+    .approved-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(76,175,80,0.15);
+      border: 1px solid rgba(76,175,80,0.3);
+      border-radius: 100px;
+      padding: 4px 12px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: #81c784;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .approved-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: #4caf50;
+      animation: pulse-glow 2s infinite;
+    }
+
+    .fund-amount {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3.5rem;
+      color: var(--white);
+      line-height: 1;
+      letter-spacing: 0.03em;
+    }
+
+    .fund-label {
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      margin-top: 4px;
+    }
+
+    .fund-bar {
+      margin-top: 20px;
+      height: 6px;
+      background: rgba(100,181,246,0.1);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .fund-bar-fill {
+      height: 100%;
+      width: 72%;
+      background: linear-gradient(90deg, var(--blue-primary), var(--blue-bright));
+      border-radius: 3px;
+      animation: barFill 1.5s ease 0.5s both;
+    }
+
+    @keyframes barFill {
+      from { width: 0; }
+      to { width: 72%; }
+    }
+
+    .mini-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .mini-stat {
+      background: rgba(11,22,38,0.8);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px 20px;
+      text-align: center;
+    }
+
+    .mini-stat-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.8rem;
+      color: var(--blue-bright);
+      line-height: 1;
+    }
+
+    .mini-stat-lbl {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 4px;
+    }
+
+    /* ── HOW IT WORKS ── */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 60px;
+      position: relative;
+    }
+
+    .steps-grid::before {
+      content: '';
+      position: absolute;
+      top: 28px;
+      left: calc(16.66% + 28px);
+      right: calc(16.66% + 28px);
+      height: 1px;
+      background: linear-gradient(90deg, var(--blue-primary), var(--blue-accent), var(--blue-primary));
+      opacity: 0.4;
+    }
+
+    .step-card {
+      text-align: center;
+      position: relative;
+    }
+
+    .step-number {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--gradient-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.5rem;
+      color: #fff;
+      margin: 0 auto 24px;
+      box-shadow: 0 8px 30px rgba(21,101,192,0.4);
+      position: relative;
+      z-index: 1;
+    }
+
+    .step-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+
+    .step-card p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; }
+
+    /* ── PRODUCTS PREVIEW ── */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 60px;
+    }
+
+    .product-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 36px 30px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      text-decoration: none;
+      display: block;
+    }
+
+    .product-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--gradient-blue);
+      transform: scaleX(0);
+      transition: transform 0.3s;
+      transform-origin: left;
+    }
+
+    .product-card:hover {
+      border-color: rgba(100,181,246,0.35);
+      transform: translateY(-4px);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.4);
+    }
+
+    .product-card:hover::after { transform: scaleX(1); }
+
+    .product-icon {
+      font-size: 2rem;
+      margin-bottom: 18px;
+    }
+
+    .product-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+
+    .product-card p {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .product-range {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.2rem;
+      color: var(--blue-bright);
+      letter-spacing: 0.05em;
+    }
+
+    .product-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--blue-accent);
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-decoration: none;
+      margin-top: 16px;
+      transition: gap 0.2s;
+    }
+
+    .product-card:hover .product-link { gap: 10px; }
+
+    /* ── WHY US ── */
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .why-visual {
+      position: relative;
+    }
+
+    .why-img-wrap {
+      border-radius: 20px;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      position: relative;
+      background: linear-gradient(135deg, var(--navy-mid), var(--navy-light));
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .why-graphic {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      inset: 0;
+    }
+
+    .why-badge {
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+      background: var(--gradient-blue);
+      border-radius: 14px;
+      padding: 20px 24px;
+      text-align: center;
+      box-shadow: 0 12px 40px rgba(21,101,192,0.5);
+    }
+
+    .why-badge-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.2rem;
+      color: #fff;
+      line-height: 1;
+    }
+
+    .why-badge-txt {
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.75);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .feature-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 36px;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .feature-check {
+      width: 28px; height: 28px;
+      border-radius: 8px;
+      background: rgba(21,101,192,0.2);
+      border: 1px solid rgba(100,181,246,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .feature-check svg { color: var(--blue-accent); }
+
+    .feature-item-content h4 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 3px;
+    }
+
+    .feature-item-content p {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials-section { background: var(--navy-mid); }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 60px;
+    }
+
+    .testimonial-card {
+      background: rgba(4,8,15,0.6);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+    }
+
+    .stars {
+      color: var(--gold);
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      margin-bottom: 16px;
+    }
+
+    .testimonial-card blockquote {
+      color: var(--silver-light);
+      font-size: 0.92rem;
+      line-height: 1.75;
+      font-style: italic;
+      margin-bottom: 24px;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .author-avatar {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: var(--gradient-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.1rem;
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    .author-name {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--white);
+    }
+
+    .author-biz {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    /* ── CTA BANNER ── */
+    .cta-banner {
+      background: linear-gradient(135deg, #0d3b7a, #1565c0, #0d47a1);
+      padding: 80px 5%;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+
+    .cta-banner-content { position: relative; z-index: 1; }
+
+    .cta-banner h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+
+    .cta-banner p {
+      color: rgba(255,255,255,0.75);
+      font-size: 1.05rem;
+      margin-bottom: 36px;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-banner .btn-primary {
+      background: #fff;
+      color: var(--blue-primary);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    }
+
+    .cta-banner .btn-primary:hover {
+      background: var(--white);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1000px) {
+      .hero-container { grid-template-columns: 1fr; gap: 50px; }
+      .hero-visual { max-width: 480px; }
+      .why-grid { grid-template-columns: 1fr; }
+      .why-visual { order: -1; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .products-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 700px) {
+      .products-grid { grid-template-columns: 1fr; }
+      .steps-grid { grid-template-columns: 1fr; gap: 40px; }
+      .steps-grid::before { display: none; }
+      .hero-actions { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+  <link rel="stylesheet" crossorigin href="/assets/index-BIVa0ZRN.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">
+    <img src="/assets/logo-C6H8eqJi.png" alt="Xclusive Capital Group" onerror="this.style.display='none'">
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="products.html">Funding</a></li>
+    <li><a href="how-it-works.html">How It Works</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="apply.html" class="nav-cta">Apply Now</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid-lines"></div>
+  <div class="hero-container">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <div class="hero-badge-dot"></div>
+        Same-Day Decisions Available
+      </div>
+      <h1 class="hero-title">
+        Capital That Moves<br>As Fast As Your<br><span class="accent">Ambition.</span>
+      </h1>
+      <p class="hero-subtitle">
+        Xclusive Capital Group delivers flexible business funding from $5,000 to $5,000,000. Fast approvals, transparent terms, and a dedicated advisor with every deal.
+      </p>
+      <div class="hero-actions">
+        <a href="apply.html" class="btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          Get Funded Today
+        </a>
+        <a href="how-it-works.html" class="btn-outline">See How It Works</a>
+      </div>
+      <div class="trust-badges">
+        <div class="trust-item">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          SSL Secured
+        </div>
+        <div class="trust-item">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          24hr Decisions
+        </div>
+        <div class="trust-item">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          No Hard Credit Pull
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-card hero-card-main">
+        <div class="approved-badge">
+          <span class="approved-dot"></span>
+          Pre-Approved
+        </div>
+        <div class="fund-amount">$250,000</div>
+        <div class="fund-label">Merchant Cash Advance — Hospitality Industry</div>
+        <div class="fund-bar"><div class="fund-bar-fill"></div></div>
+        <div style="display:flex;justify-content:space-between;margin-top:8px;">
+          <span style="font-size:0.75rem;color:var(--text-muted)">Funded in 4 hours</span>
+          <span style="font-size:0.75rem;color:var(--blue-accent);font-weight:600">72% Match</span>
+        </div>
+      </div>
+      <div class="mini-stats">
+        <div class="mini-stat">
+          <div class="mini-stat-num">$500M<span style="font-size:1rem">+</span></div>
+          <div class="mini-stat-lbl">Deployed</div>
+        </div>
+        <div class="mini-stat">
+          <div class="mini-stat-num">98<span style="font-size:1rem">%</span></div>
+          <div class="mini-stat-lbl">Client Satisfaction</div>
+        </div>
+        <div class="mini-stat">
+          <div class="mini-stat-num">4<span style="font-size:1rem">hrs</span></div>
+          <div class="mini-stat-lbl">Avg. Funding Time</div>
+        </div>
+        <div class="mini-stat">
+          <div class="mini-stat-num">50<span style="font-size:1rem">+</span></div>
+          <div class="mini-stat-lbl">Lender Network</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stats-grid">
+    <div class="stat-item">
+      <div class="stat-number">$<span>500</span>M+</div>
+      <div class="stat-label">Total Capital Deployed</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number"><span>10,000</span>+</div>
+      <div class="stat-label">Businesses Funded</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number"><span>50</span>+</div>
+      <div class="stat-label">Lending Partners</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number"><span>24</span>HR</div>
+      <div class="stat-label">Average Decision Time</div>
+    </div>
+  </div>
+</div>
+
+<!-- FUNDING PRODUCTS PREVIEW -->
+<section style="background: var(--navy);">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div class="section-label">Funding Solutions</div>
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px;">
+      <h2 class="section-title">Capital For Every<br><em>Stage of Growth</em></h2>
+      <a href="products.html" class="btn-outline" style="white-space:nowrap">View All Products</a>
+    </div>
+    <div class="products-grid">
+      <a href="products.html#mca" class="product-card">
+        <div class="product-icon">⚡</div>
+        <h3>Merchant Cash Advance</h3>
+        <p>Flexible funding based on your future revenue. No collateral required, daily or weekly repayment aligned with your cash flow.</p>
+        <div class="product-range">$5K – $2M</div>
+        <div class="product-link">Learn More <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </a>
+      <a href="products.html#sba" class="product-card">
+        <div class="product-icon">🏛️</div>
+        <h3>SBA Loans</h3>
+        <p>Government-backed loans with low rates and long terms. Ideal for established businesses looking to scale operations.</p>
+        <div class="product-range">$50K – $5M</div>
+        <div class="product-link">Learn More <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </a>
+      <a href="products.html#equipment" class="product-card">
+        <div class="product-icon">🔧</div>
+        <h3>Equipment Financing</h3>
+        <p>Purchase or lease business equipment with the equipment itself serving as collateral. Preserve your working capital.</p>
+        <div class="product-range">$10K – $5M</div>
+        <div class="product-link">Learn More <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </a>
+      <a href="products.html#loc" class="product-card">
+        <div class="product-icon">🔄</div>
+        <h3>Business Line of Credit</h3>
+        <p>Draw only what you need, when you need it. Revolving credit facility that grows with your business performance.</p>
+        <div class="product-range">$10K – $500K</div>
+        <div class="product-link">Learn More <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </a>
+      <a href="products.html#realestate" class="product-card">
+        <div class="product-icon">🏢</div>
+        <h3>Commercial Real Estate</h3>
+        <p>Finance acquisition, renovation, or refinancing of commercial properties. Bridge loans and permanent financing available.</p>
+        <div class="product-range">$100K – $5M</div>
+        <div class="product-link">Learn More <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </a>
+      <a href="products.html#invoice" class="product-card">
+        <div class="product-icon">📄</div>
+        <h3>Invoice Factoring</h3>
+        <p>Turn outstanding invoices into immediate cash. Stop waiting 30–90 days to get paid. Unlock your receivables today.</p>
+        <div class="product-range">$10K – $2M</div>
+        <div class="product-link">Learn More <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section style="background: var(--navy-mid);">
+  <div style="max-width:1100px;margin:0 auto;text-align:center;">
+    <div class="section-label" style="justify-content:center;">Process</div>
+    <h2 class="section-title">Funding in Three <em>Simple Steps</em></h2>
+    <p class="section-subtitle" style="margin:0 auto 0;">From application to funded account — we make the process fast, transparent, and stress-free.</p>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-number">1</div>
+        <h3>Apply in Minutes</h3>
+        <p>Complete our simple online application in under 5 minutes. We just need basic business details to get started — no lengthy paperwork.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">2</div>
+        <h3>Get Matched</h3>
+        <p>Your dedicated advisor reviews your profile and matches you with the best funding options from our 50+ lender network within 24 hours.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">3</div>
+        <h3>Receive Funds</h3>
+        <p>Review your offers, choose the best fit, and receive funds directly to your business bank account — often the same day.</p>
+      </div>
+    </div>
+    <div style="margin-top:50px;">
+      <a href="apply.html" class="btn-primary">Start Your Application</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY XCLUSIVE -->
+<section style="background: var(--navy);">
+  <div style="max-width:1200px;margin:0 auto;" class="why-grid">
+    <div class="why-content">
+      <div class="section-label">Why Xclusive</div>
+      <h2 class="section-title">The Funding Partner<br>You <em>Deserve</em></h2>
+      <p class="section-subtitle">We're not just a lender — we're a capital strategy partner committed to your long-term growth.</p>
+      <ul class="feature-list">
+        <li class="feature-item">
+          <div class="feature-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div class="feature-item-content">
+            <h4>Dedicated Capital Advisor</h4>
+            <p>Every client gets a real human advisor who understands your industry and guides you through every option.</p>
+          </div>
+        </li>
+        <li class="feature-item">
+          <div class="feature-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div class="feature-item-content">
+            <h4>No Hidden Fees. Ever.</h4>
+            <p>All terms, rates, and fees are disclosed upfront. No origination surprises, no prepayment penalties on most products.</p>
+          </div>
+        </li>
+        <li class="feature-item">
+          <div class="feature-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div class="feature-item-content">
+            <h4>Access to 50+ Lenders</h4>
+            <p>Our marketplace approach means you receive competitive offers — not just what one lender is willing to do.</p>
+          </div>
+        </li>
+        <li class="feature-item">
+          <div class="feature-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div class="feature-item-content">
+            <h4>All Credit Profiles Welcome</h4>
+            <p>We work with businesses across the credit spectrum. A lower credit score doesn't mean a closed door with us.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="why-visual">
+      <div class="why-img-wrap">
+        <svg class="why-graphic" viewBox="0 0 560 420" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="bg1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#0b1626"/>
+              <stop offset="100%" style="stop-color:#112240"/>
+            </linearGradient>
+            <linearGradient id="bl1" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style="stop-color:#1565c0"/>
+              <stop offset="100%" style="stop-color:#42a5f5"/>
+            </linearGradient>
+          </defs>
+          <rect width="560" height="420" fill="url(#bg1)"/>
+          <!-- Grid lines -->
+          <g opacity="0.06" stroke="#64b5f6" stroke-width="1">
+            <line x1="0" y1="60" x2="560" y2="60"/>
+            <line x1="0" y1="120" x2="560" y2="120"/>
+            <line x1="0" y1="180" x2="560" y2="180"/>
+            <line x1="0" y1="240" x2="560" y2="240"/>
+            <line x1="0" y1="300" x2="560" y2="300"/>
+            <line x1="0" y1="360" x2="560" y2="360"/>
+            <line x1="80" y1="0" x2="80" y2="420"/>
+            <line x1="160" y1="0" x2="160" y2="420"/>
+            <line x1="240" y1="0" x2="240" y2="420"/>
+            <line x1="320" y1="0" x2="320" y2="420"/>
+            <line x1="400" y1="0" x2="400" y2="420"/>
+            <line x1="480" y1="0" x2="480" y2="420"/>
+          </g>
+          <!-- Buildings -->
+          <rect x="60" y="180" width="50" height="180" rx="4" fill="rgba(21,101,192,0.4)" stroke="rgba(100,181,246,0.4)" stroke-width="1"/>
+          <rect x="70" y="190" width="10" height="8" rx="1" fill="rgba(100,181,246,0.5)"/>
+          <rect x="90" y="190" width="10" height="8" rx="1" fill="rgba(100,181,246,0.5)"/>
+          <rect x="70" y="208" width="10" height="8" rx="1" fill="rgba(100,181,246,0.3)"/>
+          <rect x="90" y="208" width="10" height="8" rx="1" fill="rgba(100,181,246,0.6)"/>
+          <rect x="70" y="226" width="10" height="8" rx="1" fill="rgba(100,181,246,0.5)"/>
+          <rect x="90" y="226" width="10" height="8" rx="1" fill="rgba(100,181,246,0.3)"/>
+
+          <rect x="130" y="120" width="70" height="240" rx="4" fill="rgba(21,101,192,0.55)" stroke="rgba(100,181,246,0.5)" stroke-width="1"/>
+          <rect x="145" y="132" width="12" height="10" rx="1" fill="rgba(100,181,246,0.6)"/>
+          <rect x="168" y="132" width="12" height="10" rx="1" fill="rgba(100,181,246,0.4)"/>
+          <rect x="145" y="152" width="12" height="10" rx="1" fill="rgba(100,181,246,0.5)"/>
+          <rect x="168" y="152" width="12" height="10" rx="1" fill="rgba(100,181,246,0.7)"/>
+          <rect x="145" y="172" width="12" height="10" rx="1" fill="rgba(100,181,246,0.3)"/>
+          <rect x="168" y="172" width="12" height="10" rx="1" fill="rgba(100,181,246,0.5)"/>
+          <rect x="145" y="192" width="12" height="10" rx="1" fill="rgba(100,181,246,0.6)"/>
+          <rect x="168" y="192" width="12" height="10" rx="1" fill="rgba(100,181,246,0.4)"/>
+
+          <rect x="220" y="60" width="90" height="300" rx="4" fill="rgba(21,101,192,0.7)" stroke="rgba(100,181,246,0.6)" stroke-width="1"/>
+          <rect x="235" y="76" width="14" height="12" rx="1" fill="rgba(100,181,246,0.7)"/>
+          <rect x="260" y="76" width="14" height="12" rx="1" fill="rgba(100,181,246,0.5)"/>
+          <rect x="285" y="76" width="14" height="12" rx="1" fill="rgba(100,181,246,0.7)"/>
+          <rect x="235" y="100" width="14" height="12" rx="1" fill="rgba(100,181,246,0.4)"/>
+          <rect x="260" y="100" width="14" height="12" rx="1" fill="rgba(100,181,246,0.7)"/>
+          <rect x="285" y="100" width="14" height="12" rx="1" fill="rgba(100,181,246,0.5)"/>
+          <rect x="235" y="124" width="14" height="12" rx="1" fill="rgba(100,181,246,0.6)"/>
+          <rect x="260" y="124" width="14" height="12" rx="1" fill="rgba(100,181,246,0.4)"/>
+          <rect x="285" y="124" width="14" height="12" rx="1" fill="rgba(100,181,246,0.7)"/>
+          <rect x="235" y="148" width="14" height="12" rx="1" fill="rgba(100,181,246,0.5)"/>
+          <rect x="260" y="148" width="14" height="12" rx="1" fill="rgba(100,181,246,0.7)"/>
+          <rect x="285" y="148" width="14" height="12" rx="1" fill="rgba(100,181,246,0.4)"/>
+
+          <rect x="330" y="140" width="60" height="220" rx="4" fill="rgba(21,101,192,0.45)" stroke="rgba(100,181,246,0.4)" stroke-width="1"/>
+          <rect x="345" y="155" width="12" height="10" rx="1" fill="rgba(100,181,246,0.5)"/>
+          <rect x="365" y="155" width="12" height="10" rx="1" fill="rgba(100,181,246,0.3)"/>
+          <rect x="345" y="175" width="12" height="10" rx="1" fill="rgba(100,181,246,0.6)"/>
+          <rect x="365" y="175" width="12" height="10" rx="1" fill="rgba(100,181,246,0.5)"/>
+
+          <rect x="410" y="200" width="55" height="160" rx="4" fill="rgba(21,101,192,0.35)" stroke="rgba(100,181,246,0.3)" stroke-width="1"/>
+          <rect x="422" y="214" width="10" height="8" rx="1" fill="rgba(100,181,246,0.4)"/>
+          <rect x="442" y="214" width="10" height="8" rx="1" fill="rgba(100,181,246,0.3)"/>
+
+          <!-- Ground -->
+          <rect x="0" y="356" width="560" height="64" fill="rgba(4,8,15,0.6)"/>
+          
+          <!-- Rising chart line -->
+          <polyline points="40,320 120,280 220,220 320,160 440,100 540,60" fill="none" stroke="url(#bl1)" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="540" cy="60" r="6" fill="#42a5f5"/>
+          <circle cx="440" cy="100" r="4" fill="#1565c0"/>
+          <circle cx="320" cy="160" r="4" fill="#1565c0"/>
+
+          <!-- Glow overlay -->
+          <radialGradient id="glow1" cx="50%" cy="40%" r="50%">
+            <stop offset="0%" style="stop-color:#2196f3;stop-opacity:0.08"/>
+            <stop offset="100%" style="stop-color:#2196f3;stop-opacity:0"/>
+          </radialGradient>
+          <rect width="560" height="420" fill="url(#glow1)"/>
+        </svg>
+        <div class="why-badge">
+          <div class="why-badge-num">98%</div>
+          <div class="why-badge-txt">Satisfaction<br>Rate</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-section">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:60px;">
+      <div class="section-label" style="justify-content:center;">Client Stories</div>
+      <h2 class="section-title">Real Businesses.<br><em>Real Results.</em></h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Xclusive Capital Group got us funded within 6 hours on a $350,000 MCA. Our advisor walked us through every option and never pushed us toward anything that wasn't right for us. This is the real deal."</blockquote>
+        <div class="testimonial-author">
+          <div class="author-avatar">MR</div>
+          <div>
+            <div class="author-name">Marcus R.</div>
+            <div class="author-biz">Restaurant Group — Atlanta, GA</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"We needed equipment financing fast to win a contract. Xclusive found us $180,000 at a rate I didn't think was possible. The whole process was smooth, professional, and completely transparent."</blockquote>
+        <div class="testimonial-author">
+          <div class="author-avatar">TL</div>
+          <div>
+            <div class="author-name">Tanya L.</div>
+            <div class="author-biz">Construction & Excavation — Phoenix, AZ</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"After being declined by my bank twice, Xclusive found me an SBA loan option I didn't even know I qualified for. They advocated for my business like it was their own. Couldn't recommend them more."</blockquote>
+        <div class="testimonial-author">
+          <div class="author-avatar">JK</div>
+          <div>
+            <div class="author-name">James K.</div>
+            <div class="author-biz">Medical Practice — Chicago, IL</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<div class="cta-banner">
+  <div class="cta-banner-content">
+    <h2>Ready to Unlock Your<br>Business Potential?</h2>
+    <p>Join thousands of businesses that have secured the capital they need to grow. Apply in minutes — no obligation, no hard credit pull.</p>
+    <a href="apply.html" class="btn-primary" style="margin:0 auto;display:inline-flex;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      Apply Now — It's Free
+    </a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="footer-logo">
+        <img src="/assets/logo-C6H8eqJi.png" alt="Xclusive Capital Group" onerror="this.style.display='none'">
+      </a>
+      <p>Empowering businesses with the capital they need to grow, expand, and thrive. Fast decisions. Transparent terms. Real results.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Funding</h4>
+      <ul>
+        <li><a href="products.html#mca">Merchant Cash Advance</a></li>
+        <li><a href="products.html#sba">SBA Loans</a></li>
+        <li><a href="products.html#equipment">Equipment Financing</a></li>
+        <li><a href="products.html#loc">Line of Credit</a></li>
+        <li><a href="products.html#realestate">Commercial Real Estate</a></li>
+        <li><a href="products.html#invoice">Invoice Factoring</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="how-it-works.html">How It Works</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="apply.html">Apply Now</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+18005551234">(800) 555-1234</a></li>
+        <li><a href="/cdn-cgi/l/email-protection#6801060e0728100b041d1b011e0d0b0918011c09040f1a071d18460b0705"><span class="__cf_email__" data-cfemail="fc95929a93bc849f90898f958a999f9d8c95889d909b8e93898cd29f9391">[email&#160;protected]</span></a></li>
+        <li><a href="#">Mon–Fri: 8am – 8pm EST</a></li>
+        <li><a href="#">Sat: 9am – 5pm EST</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Xclusive Capital Group. All Rights Reserved.</p>
+    <p><a href="#">Privacy Policy</a> · <a href="#">Terms of Service</a></p>
+    <p style="font-size:0.72rem;color:var(--text-muted);max-width:500px;text-align:right;">Xclusive Capital Group is a business finance consulting firm, not a direct lender. All funding is subject to lender approval and qualification.</p>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  // Nav scroll effect
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // Mobile nav
+  function toggleNav() {
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+
+  // Animate stats on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animated');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.stat-item').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
