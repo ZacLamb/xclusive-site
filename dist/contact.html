@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | Xclusive Capital Group</title>
+  <style>
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 70px;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 100px 5%;
+      align-items: start;
+    }
+
+    .contact-info-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 36px;
+      position: sticky;
+      top: 100px;
+    }
+
+    .contact-method {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .contact-method:last-child { border-bottom: none; }
+
+    .contact-icon {
+      width: 44px; height: 44px;
+      border-radius: 10px;
+      background: rgba(21,101,192,0.2);
+      border: 1px solid rgba(100,181,246,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .contact-method-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .contact-method-value {
+      color: var(--white);
+      font-size: 0.95rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .contact-method-value:hover { color: var(--blue-accent); }
+
+    .contact-method-sub {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .contact-form-panel {
+      background: rgba(11,22,38,0.6);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 48px;
+      position: relative;
+    }
+
+    .contact-form-panel::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      border-radius: 20px 20px 0 0;
+      background: linear-gradient(90deg, transparent, var(--blue-bright), transparent);
+    }
+
+    .contact-success {
+      display: none;
+      text-align: center;
+      padding: 40px 0;
+    }
+
+    @media (max-width: 900px) {
+      .contact-layout { grid-template-columns: 1fr; gap: 40px; }
+      .contact-info-card { position: static; }
+      .contact-form-panel { padding: 32px 24px; }
+    }
+  </style>
+  <link rel="stylesheet" crossorigin href="/assets/style-BIVa0ZRN.css">
+</head>
+<body>
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">
+    <img src="/assets/logo-C6H8eqJi.png" alt="Xclusive Capital Group" onerror="this.style.display='none'">
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="products.html">Funding</a></li>
+    <li><a href="how-it-works.html">How It Works</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+    <li><a href="apply.html" class="nav-cta">Apply Now</a></li>
+  </ul>
+  <div class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-content">
+    <div class="section-label">Get In Touch</div>
+    <h1 class="section-title">We're Here to<br><em>Help You Grow</em></h1>
+    <p class="section-subtitle">Have questions about your funding options? Ready to start the process? Reach out — a real advisor will respond, not a bot.</p>
+  </div>
+</div>
+
+<div class="contact-layout">
+  <!-- CONTACT INFO -->
+  <div>
+    <div class="contact-info-card">
+      <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;color:var(--white);margin-bottom:8px;">Contact Information</h3>
+      <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:24px;line-height:1.6;">Our advisors are available Monday–Friday 8am–8pm and Saturday 9am–5pm EST.</p>
+
+      <div class="contact-method">
+        <div class="contact-icon">📞</div>
+        <div>
+          <div class="contact-method-label">Phone</div>
+          <a href="tel:+18005551234" class="contact-method-value">(800) 555-1234</a>
+          <div class="contact-method-sub">Mon–Fri 8am–8pm · Sat 9am–5pm EST</div>
+        </div>
+      </div>
+
+      <div class="contact-method">
+        <div class="contact-icon">✉️</div>
+        <div>
+          <div class="contact-method-label">Email</div>
+          <a href="mailto:info@xclusivecapitalgroup.com" class="contact-method-value">info@xclusivecapitalgroup.com</a>
+          <div class="contact-method-sub">Response within 2 business hours</div>
+        </div>
+      </div>
+
+      <div class="contact-method">
+        <div class="contact-icon">💬</div>
+        <div>
+          <div class="contact-method-label">Live Chat</div>
+          <span class="contact-method-value">Available on site</span>
+          <div class="contact-method-sub">Mon–Fri 9am–6pm EST</div>
+        </div>
+      </div>
+
+      <div class="contact-method">
+        <div class="contact-icon">📍</div>
+        <div>
+          <div class="contact-method-label">Office</div>
+          <span class="contact-method-value">United States</span>
+          <div class="contact-method-sub">Serving all 50 states</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:var(--gradient-blue);border-radius:16px;padding:28px;margin-top:20px;text-align:center;">
+      <p style="color:rgba(255,255,255,0.85);font-size:0.85rem;margin-bottom:12px;">Ready to get funded? Skip the form.</p>
+      <a href="apply.html" class="btn-primary" style="background:#fff;color:var(--blue-primary);display:inline-flex;justify-content:center;width:100%;">
+        Apply Now — Free
+      </a>
+    </div>
+  </div>
+
+  <!-- CONTACT FORM -->
+  <div class="contact-form-panel">
+    <div id="contactForm">
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:700;color:var(--white);margin-bottom:6px;">Send Us a Message</h2>
+      <p style="color:var(--text-muted);font-size:0.88rem;margin-bottom:32px;">An advisor will respond within 1–2 business hours.</p>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+        <div class="form-group">
+          <label>First Name *</label>
+          <input type="text" id="cfFirst" placeholder="First Name" />
+        </div>
+        <div class="form-group">
+          <label>Last Name *</label>
+          <input type="text" id="cfLast" placeholder="Last Name" />
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+        <div class="form-group">
+          <label>Email Address *</label>
+          <input type="email" id="cfEmail" placeholder="you@email.com" />
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" id="cfPhone" placeholder="(555) 000-0000" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Business Name</label>
+        <input type="text" id="cfBiz" placeholder="Your Company Name" />
+      </div>
+
+      <div class="form-group">
+        <label>What Can We Help You With? *</label>
+        <select id="cfTopic">
+          <option value="">Select a topic</option>
+          <option>I'm ready to apply for funding</option>
+          <option>I have questions about funding options</option>
+          <option>I want to understand my qualification</option>
+          <option>I need help with an existing application</option>
+          <option>General inquiry</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Message *</label>
+        <textarea id="cfMessage" placeholder="Tell us about your business and how we can help..."></textarea>
+      </div>
+
+      <button class="btn-primary" onclick="submitContact()" style="width:100%;justify-content:center;">
+        Send Message →
+      </button>
+
+      <p style="font-size:0.75rem;color:var(--text-muted);margin-top:16px;text-align:center;">
+        Your information is secure and will never be sold or shared.
+      </p>
+    </div>
+
+    <div class="contact-success" id="contactSuccess">
+      <div style="font-size:3rem;margin-bottom:16px;">✅</div>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;color:var(--white);margin-bottom:12px;">Message Received!</h2>
+      <p style="color:var(--text-muted);line-height:1.7;">Thank you for reaching out. One of our capital advisors will respond to you within 1–2 business hours. In the meantime, feel free to explore our funding options.</p>
+      <div style="margin-top:28px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+        <a href="products.html" class="btn-outline">View Funding Options</a>
+        <a href="apply.html" class="btn-primary">Apply Now</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <p style="margin-top:12px;">Empowering businesses with the capital they need to grow.</p>
+    </div>
+    <div class="footer-col"><h4>Funding</h4><ul>
+      <li><a href="products.html#mca">Merchant Cash Advance</a></li>
+      <li><a href="products.html#sba">SBA Loans</a></li>
+      <li><a href="products.html#equipment">Equipment Financing</a></li>
+      <li><a href="products.html#loc">Line of Credit</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Company</h4><ul>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="how-it-works.html">How It Works</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="apply.html">Apply Now</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul>
+      <li><a href="tel:+18005551234">(800) 555-1234</a></li>
+      <li><a href="mailto:info@xclusivecapitalgroup.com">info@xclusivecapitalgroup.com</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Xclusive Capital Group. All Rights Reserved.</p>
+    <p><a href="#">Privacy Policy</a> · <a href="#">Terms</a></p>
+  </div>
+</footer>
+
+<script>
+  window.addEventListener('scroll', () => document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60));
+  function toggleNav() { document.getElementById('navLinks').classList.toggle('open'); }
+
+  async function submitContact() {
+    const first = document.getElementById('cfFirst').value.trim();
+    const last  = document.getElementById('cfLast').value.trim();
+    const email = document.getElementById('cfEmail').value.trim();
+    const topic = document.getElementById('cfTopic').value;
+    const message = document.getElementById('cfMessage').value.trim();
+
+    if (!first || !last || !email || !topic || !message) {
+      alert('Please fill out all required fields.');
+      return;
+    }
+
+    const payload = {
+      form_type:     'contact_inquiry',
+      first_name:    first,
+      last_name:     last,
+      full_name:     `${first} ${last}`,
+      email:         email,
+      phone:         document.getElementById('cfPhone').value.trim(),
+      business_name: document.getElementById('cfBiz').value.trim(),
+      topic:         topic,
+      message:       message,
+    };
+
+    const EDGE_FN = 'https://gdnfsapnccjhwangfdwy.supabase.co/functions/v1/submit-form';
+
+    try {
+      await fetch(EDGE_FN, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdkbmZzYXBuY2NqaHdhbmdmZHd5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU3NDAzNTIsImV4cCI6MjA5MTMxNjM1Mn0.nV1JRzyqK0aXbEsLKH5KfY8fvvd2qFSN01gy9I0Fhx0',
+        },
+        body: JSON.stringify(payload),
+      });
+    } catch (e) {
+      console.error('Submission error:', e);
+    }
+
+    document.getElementById('contactForm').style.display = 'none';
+    document.getElementById('contactSuccess').style.display = 'block';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+</body>
+</html>
